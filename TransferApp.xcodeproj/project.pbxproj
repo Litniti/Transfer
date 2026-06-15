@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		647334FE2FE07FDC0010EDB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647334FA2FE07FDC0010EDB7 /* Assets.xcassets */; };
+		647334FF2FE07FDC0010EDB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647334FB2FE07FDC0010EDB7 /* ContentView.swift */; };
+		647335002FE07FDC0010EDB7 /* TransferAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */; };
 		B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -14,16 +17,11 @@
 		3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransferApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.release.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.release.xcconfig"; sourceTree = "<group>"; };
 		6466ED262FE0791B00FFBCF8 /* TransferApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		647334FA2FE07FDC0010EDB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		647334FB2FE07FDC0010EDB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAppApp.swift; sourceTree = "<group>"; };
 		C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.debug.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		6466ED282FE0791B00FFBCF8 /* TransferApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TransferApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6466ED232FE0791B00FFBCF8 /* Frameworks */ = {
@@ -40,7 +38,7 @@
 		6466ED1D2FE0791B00FFBCF8 = {
 			isa = PBXGroup;
 			children = (
-				6466ED282FE0791B00FFBCF8 /* TransferApp */,
+				647334FD2FE07FDC0010EDB7 /* TransferApp */,
 				6466ED272FE0791B00FFBCF8 /* Products */,
 				93D78A93406B5B1F0380F8F8 /* Pods */,
 				C58A76678FB607DF696B4562 /* Frameworks */,
@@ -53,6 +51,16 @@
 				6466ED262FE0791B00FFBCF8 /* TransferApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		647334FD2FE07FDC0010EDB7 /* TransferApp */ = {
+			isa = PBXGroup;
+			children = (
+				647334FA2FE07FDC0010EDB7 /* Assets.xcassets */,
+				647334FB2FE07FDC0010EDB7 /* ContentView.swift */,
+				647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */,
+			);
+			path = TransferApp;
 			sourceTree = "<group>";
 		};
 		93D78A93406B5B1F0380F8F8 /* Pods */ = {
@@ -88,9 +96,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				6466ED282FE0791B00FFBCF8 /* TransferApp */,
 			);
 			name = TransferApp;
 			productName = TransferApp;
@@ -136,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647334FE2FE07FDC0010EDB7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +198,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647334FF2FE07FDC0010EDB7 /* ContentView.swift in Sources */,
+				647335002FE07FDC0010EDB7 /* TransferAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
