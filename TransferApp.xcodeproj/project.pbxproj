@@ -10,6 +10,12 @@
 		647334FE2FE07FDC0010EDB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647334FA2FE07FDC0010EDB7 /* Assets.xcassets */; };
 		647334FF2FE07FDC0010EDB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647334FB2FE07FDC0010EDB7 /* ContentView.swift */; };
 		647335002FE07FDC0010EDB7 /* TransferAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */; };
+		647335082FE080B10010EDB7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335072FE080AA0010EDB7 /* Transfer.swift */; };
+		6473350A2FE080C40010EDB7 /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335092FE080C30010EDB7 /* TransferViewModel.swift */; };
+		6473350C2FE080D60010EDB7 /* CreateTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350B2FE080D40010EDB7 /* CreateTransferView.swift */; };
+		6473350E2FE080E70010EDB7 /* TransferRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350D2FE080E60010EDB7 /* TransferRecapView.swift */; };
+		647335102FE080ED0010EDB7 /* TransferHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */; };
+		647335122FE080F20010EDB7 /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335112FE080F10010EDB7 /* TransferDetailView.swift */; };
 		B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +26,12 @@
 		647334FA2FE07FDC0010EDB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		647334FB2FE07FDC0010EDB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAppApp.swift; sourceTree = "<group>"; };
+		647335072FE080AA0010EDB7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		647335092FE080C30010EDB7 /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
+		6473350B2FE080D40010EDB7 /* CreateTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferView.swift; sourceTree = "<group>"; };
+		6473350D2FE080E60010EDB7 /* TransferRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapView.swift; sourceTree = "<group>"; };
+		6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryView.swift; sourceTree = "<group>"; };
+		647335112FE080F10010EDB7 /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
 		C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.debug.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,11 +68,65 @@
 		647334FD2FE07FDC0010EDB7 /* TransferApp */ = {
 			isa = PBXGroup;
 			children = (
+				647335062FE080510010EDB7 /* Utils */,
+				647335052FE080450010EDB7 /* Resources */,
+				647335042FE080340010EDB7 /* ViewModels */,
+				647335032FE0802F0010EDB7 /* Views */,
+				647335022FE07FF30010EDB7 /* Models */,
+				647335012FE07FEF0010EDB7 /* App */,
 				647334FA2FE07FDC0010EDB7 /* Assets.xcassets */,
-				647334FB2FE07FDC0010EDB7 /* ContentView.swift */,
-				647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */,
 			);
 			path = TransferApp;
+			sourceTree = "<group>";
+		};
+		647335012FE07FEF0010EDB7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		647335022FE07FF30010EDB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				647335072FE080AA0010EDB7 /* Transfer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		647335032FE0802F0010EDB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				647335112FE080F10010EDB7 /* TransferDetailView.swift */,
+				6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */,
+				6473350D2FE080E60010EDB7 /* TransferRecapView.swift */,
+				6473350B2FE080D40010EDB7 /* CreateTransferView.swift */,
+				647334FB2FE07FDC0010EDB7 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		647335042FE080340010EDB7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				647335092FE080C30010EDB7 /* TransferViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		647335052FE080450010EDB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		647335062FE080510010EDB7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		93D78A93406B5B1F0380F8F8 /* Pods */ = {
@@ -199,7 +265,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				647334FF2FE07FDC0010EDB7 /* ContentView.swift in Sources */,
+				6473350E2FE080E70010EDB7 /* TransferRecapView.swift in Sources */,
+				647335082FE080B10010EDB7 /* Transfer.swift in Sources */,
 				647335002FE07FDC0010EDB7 /* TransferAppApp.swift in Sources */,
+				6473350C2FE080D60010EDB7 /* CreateTransferView.swift in Sources */,
+				647335102FE080ED0010EDB7 /* TransferHistoryView.swift in Sources */,
+				647335122FE080F20010EDB7 /* TransferDetailView.swift in Sources */,
+				6473350A2FE080C40010EDB7 /* TransferViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
