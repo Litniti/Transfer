@@ -6,13 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransferApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.release.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.release.xcconfig"; sourceTree = "<group>"; };
 		6466ED262FE0791B00FFBCF8 /* TransferApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.debug.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6466ED282FE0791B00FFBCF8 /* TransferApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = TransferApp;
 			sourceTree = "<group>";
 		};
@@ -23,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +44,8 @@
 			children = (
 				6466ED282FE0791B00FFBCF8 /* TransferApp */,
 				6466ED272FE0791B00FFBCF8 /* Products */,
+				93D78A93406B5B1F0380F8F8 /* Pods */,
+				C58A76678FB607DF696B4562 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +57,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		93D78A93406B5B1F0380F8F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */,
+				52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C58A76678FB607DF696B4562 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +82,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6466ED312FE0791D00FFBCF8 /* Build configuration list for PBXNativeTarget "TransferApp" */;
 			buildPhases = (
+				D9668CB123AFA09F422C826D /* [CP] Check Pods Manifest.lock */,
 				6466ED222FE0791B00FFBCF8 /* Sources */,
 				6466ED232FE0791B00FFBCF8 /* Frameworks */,
 				6466ED242FE0791B00FFBCF8 /* Resources */,
+				BA5C741C1FC0915FBD4867C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -64,8 +96,6 @@
 				6466ED282FE0791B00FFBCF8 /* TransferApp */,
 			);
 			name = TransferApp;
-			packageProductDependencies = (
-			);
 			productName = TransferApp;
 			productReference = 6466ED262FE0791B00FFBCF8 /* TransferApp.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +143,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA5C741C1FC0915FBD4867C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9668CB123AFA09F422C826D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransferApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6466ED222FE0791B00FFBCF8 /* Sources */ = {
@@ -241,6 +313,7 @@
 		};
 		6466ED322FE0791D00FFBCF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -283,6 +356,7 @@
 		};
 		6466ED332FE0791D00FFBCF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
