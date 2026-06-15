@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "beneficiary": "John Doe",
+    "rib": "123456789012345678901234",
+    "amount": 2500,
+    "currency": "MAD",
+    "reason": "Rent",
+    "status": "Completed",
+    "createdAt": "2026-05-20T10:00:00Z",
+    "executionDate": "2026-05-20T10:00:00Z",
+    "isInstant": false
+  },
+  {
+    "id": "2",
+    "beneficiary": "Jane Smith",
+    "rib": "MA6400112345678901234567890",
+    "amount": 1500.50,
+    "currency": "EUR",
+    "reason": "Invoice payment",
+    "status": "Pending",
+    "createdAt": "2026-06-01T14:30:00Z",
+    "executionDate": "2026-06-05T09:00:00Z",
+    "isInstant": false
+  },
+  {
+    "id": "3",
+    "beneficiary": "Acme Corp",
+    "rib": "US64SVBKUS6S3300958879",
+    "amount": 9800,
+    "currency": "USD",
+    "reason": "Supplier payment",
+    "status": "Processing",
+    "createdAt": "2026-06-10T08:15:00Z",
+    "executionDate": "2026-06-10T08:15:00Z",
+    "isInstant": true
+  }
+]

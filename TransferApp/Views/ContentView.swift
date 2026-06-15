@@ -9,16 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            NavigationStack {
+                CreateTransferView()
+            }
+            .tabItem {
+                Label("New Transfer", systemImage: "plus.circle")
+            }
+
+            NavigationStack {
+                TransferHistoryView()
+            }
+            .tabItem {
+                Label("History", systemImage: "clock.arrow.circlepath")
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(TransferHistoryStore(
+            networkingService: LocalJSONNetworkingService(),
+            persistenceService: UserDefaultsTransferPersistenceService()
+        ))
 }
