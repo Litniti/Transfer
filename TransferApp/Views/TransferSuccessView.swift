@@ -44,9 +44,7 @@ struct TransferSuccessView: View {
                 DetailRow(title: "Status", value: transfer.status.displayName)
             }
             .padding(AppSpacing.md)
-            .background(AppColors.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: AppSpacing.cardRadius))
-            .shadow(color: .black.opacity(0.05), radius: 6, y: 3)
+            .cardStyle()
             .padding(.horizontal, AppSpacing.md)
 
             Spacer()

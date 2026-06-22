@@ -49,7 +49,7 @@ struct TransferDetailView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("Transfer Details")
         .navigationBarTitleDisplayMode(.inline)
-        .themedBackground()
+        .themedListSurface()
     }
 }
 

@@ -99,9 +99,7 @@ struct DashboardView: View {
             }
             .frame(height: 180)
             .padding(AppSpacing.md)
-            .background(AppColors.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: AppSpacing.cardRadius))
-            .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
+            .cardStyle()
             .accessibilityLabel("Monthly transfer activity chart")
         }
     }
@@ -130,10 +128,8 @@ struct DashboardView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, AppSpacing.md)
-            .background(AppColors.cardBackground)
+            .cardStyle()
             .foregroundStyle(AppColors.primaryBlue)
-            .clipShape(RoundedRectangle(cornerRadius: AppSpacing.cardRadius))
-            .shadow(color: .black.opacity(0.04), radius: 4, y: 2)
         }
         .accessibilityLabel(title)
     }
@@ -169,8 +165,7 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(AppSpacing.xl)
-        .background(AppColors.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppSpacing.cardRadius))
+        .cardStyle()
     }
 }
 

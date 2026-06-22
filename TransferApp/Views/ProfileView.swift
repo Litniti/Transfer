@@ -68,14 +68,13 @@ struct ProfileView: View {
                             .foregroundStyle(AppColors.secondaryText)
                     }
                 }
-                .listStyle(.insetGrouped)
+                .themedListSurface()
             } else {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .navigationTitle("Profile")
-        .themedBackground()
         .onAppear {
             if viewModel == nil {
                 viewModel = dependencies.makeProfileViewModel()

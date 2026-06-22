@@ -80,7 +80,7 @@ struct CreateTransferView: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .themedBackground()
+        .themedFormSurface()
         .navigationTitle("Transfer")
         .keyboardDismissToolbar()
         .safeAreaInset(edge: .bottom) {

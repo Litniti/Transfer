@@ -33,9 +33,7 @@ struct InfoCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(AppSpacing.md)
-        .background(AppColors.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppSpacing.cardRadius))
-        .shadow(color: .black.opacity(0.06), radius: AppSpacing.shadowRadius, y: 4)
+        .cardStyle()
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(title): \(value)")
     }

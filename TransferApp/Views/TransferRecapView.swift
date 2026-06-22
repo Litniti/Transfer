@@ -77,6 +77,7 @@ struct TransferRecapView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .themedListSurface()
         .navigationTitle("Recap")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) {
