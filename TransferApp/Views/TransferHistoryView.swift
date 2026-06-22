@@ -89,15 +89,16 @@ private struct TransferHistoryRow: View {
                 .foregroundStyle(.secondary)
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(
+            "\(transfer.beneficiary), \(TransferFormatting.amount(transfer.amount, currency: transfer.currency)), \(transfer.status.rawValue), \(TransferFormatting.dateTime(transfer.createdAt))"
+        )
     }
 }
 
 #Preview {
     NavigationStack {
         TransferHistoryView()
-            .environment(TransferHistoryStore(
-                networkingService: LocalJSONNetworkingService(),
-                persistenceService: UserDefaultsTransferPersistenceService()
-            ))
+            .environment(AppDependencyContainer.preview.historyStore)
     }
 }

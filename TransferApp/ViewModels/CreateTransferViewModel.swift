@@ -75,4 +75,11 @@ final class CreateTransferViewModel {
         guard didAttemptValidation else { return nil }
         return fieldErrors[field]?.errorDescription
     }
+
+    func clearError(for field: TransferFormField) {
+        fieldErrors.removeValue(forKey: field)
+        if fieldErrors.isEmpty {
+            didAttemptValidation = false
+        }
+    }
 }

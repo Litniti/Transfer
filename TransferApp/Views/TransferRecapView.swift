@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct TransferRecapView: View {
-    @Environment(TransferHistoryStore.self) private var historyStore
-    @Environment(\.transferSubmissionUseCase) private var submissionUseCase
+    @Environment(AppDependencyContainer.self) private var dependencies
     @Environment(\.dismiss) private var dismiss
 
+    @Binding var selectedTab: AppTab
     @State private var viewModel: TransferRecapViewModel
     @State private var showSuccessAlert = false
 
     let onCompletion: () -> Void
 
-    init(draft: TransferDraft, onCompletion: @escaping () -> Void) {
+    init(
+        draft: TransferDraft,
+        selectedTab: Binding<AppTab>,
+        onCompletion: @escaping () -> Void
+    ) {
+        _selectedTab = selectedTab
         _viewModel = State(initialValue: TransferRecapViewModel(draft: draft))
         self.onCompletion = onCompletion
     }
@@ -37,50 +42,49 @@ struct TransferRecapView: View {
                 DetailRow(title: "Reason", value: viewModel.draft.reason)
                 DetailRow(
                     title: "Execution date",
-                    value: TransferFormatting.dateTime(viewModel.draft.executionDate)
+                    value: viewModel.draft.isInstant
+                        ? "Immediately"
+                        : TransferFormatting.dateTime(viewModel.draft.executionDate)
                 )
                 DetailRow(
                     title: "Transfer type",
-                    value: viewModel.draft.isInstant ? TransferType.instant.rawValue : TransferType.scheduled.rawValue
+                    value: viewModel.draft.isInstant
+                        ? TransferType.instant.rawValue
+                        : TransferType.scheduled.rawValue
                 )
             }
 
             if let error = viewModel.submissionState.error {
                 Section {
-                    Text(error.errorDescription ?? "Transfer submission failed.")
-                        .foregroundStyle(.red)
+                    FormErrorMessage(message: error.errorDescription ?? "Transfer submission failed.")
                 }
             }
         }
         .navigationTitle("Recap")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) {
-            Button {
+            PrimaryBottomButton(
+                "Confirm Transfer",
+                isLoading: viewModel.submissionState.isInProgress
+            ) {
                 Task {
                     await viewModel.confirm(
-                        using: submissionUseCase,
-                        historyStore: historyStore
+                        using: dependencies.submissionUseCase,
+                        historyStore: dependencies.historyStore
                     )
                     if viewModel.submissionState.result != nil {
                         showSuccessAlert = true
                     }
                 }
-            } label: {
-                if viewModel.submissionState.isInProgress {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                } else {
-                    Text("Confirm Transfer")
-                        .frame(maxWidth: .infinity)
-                }
             }
-            .buttonStyle(.borderedProminent)
-            .disabled(viewModel.submissionState.isInProgress)
-            .padding()
-            .background(.bar)
         }
         .alert("Transfer Submitted", isPresented: $showSuccessAlert) {
-            Button("OK") {
+            Button("View History") {
+                onCompletion()
+                dismiss()
+                selectedTab = .history
+            }
+            Button("Create Another", role: .cancel) {
                 onCompletion()
                 dismiss()
             }
@@ -91,6 +95,8 @@ struct TransferRecapView: View {
 }
 
 #Preview {
+    @Previewable @State var tab = AppTab.createTransfer
+
     NavigationStack {
         TransferRecapView(
             draft: TransferDraft(
@@ -102,11 +108,9 @@ struct TransferRecapView: View {
                 executionDate: Date(),
                 isInstant: false
             ),
+            selectedTab: $tab,
             onCompletion: {}
         )
-        .environment(TransferHistoryStore(
-            networkingService: LocalJSONNetworkingService(),
-            persistenceService: UserDefaultsTransferPersistenceService()
-        ))
+        .environment(AppDependencyContainer.preview)
     }
 }

@@ -9,6 +9,8 @@ import Foundation
 
 struct TransferFormValidation {
     static let minimumIBANLength = 15
+    static let minimumBeneficiaryLength = 2
+    static let maximumTransferAmount = 1_000_000.0
 
     static func minimumExecutionDate(isInstant: Bool, referenceDate: Date = Date()) -> Date? {
         isInstant ? nil : referenceDate
@@ -28,21 +30,27 @@ struct TransferFormValidation {
         let trimmedBeneficiary = beneficiary.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmedBeneficiary.isEmpty {
             errors[.beneficiary] = .beneficiaryRequired
+        } else if trimmedBeneficiary.count < minimumBeneficiaryLength {
+            errors[.beneficiary] = .beneficiaryTooShort(minimumLength: minimumBeneficiaryLength)
         }
 
-        let trimmedIBAN = iban.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmedIBAN.isEmpty {
+        let normalizedIBAN = normalizeIBAN(iban)
+        if normalizedIBAN.isEmpty {
             errors[.iban] = .ibanRequired
-        } else if trimmedIBAN.count < minimumIBANLength {
+        } else if normalizedIBAN.count < minimumIBANLength {
             errors[.iban] = .ibanTooShort(minimumLength: minimumIBANLength)
+        } else if isValidIBANFormat(normalizedIBAN) == false {
+            errors[.iban] = .ibanInvalidFormat
         }
 
         let trimmedAmount = amountText.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmedAmount.isEmpty {
             errors[.amount] = .amountRequired
-        } else if let value = Double(trimmedAmount.replacingOccurrences(of: ",", with: ".")) {
+        } else if let value = parsedAmount(from: trimmedAmount) {
             if value <= 0 {
                 errors[.amount] = .amountNotPositive
+            } else if value > maximumTransferAmount {
+                errors[.amount] = .amountExceedsLimit(maximum: maximumTransferAmount)
             }
         } else {
             errors[.amount] = .amountInvalid
@@ -85,5 +93,16 @@ struct TransferFormValidation {
             .replacingOccurrences(of: ",", with: ".")
         guard let value = Double(normalized), value > 0 else { return nil }
         return value
+    }
+
+    static func normalizeIBAN(_ iban: String) -> String {
+        iban
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: " ", with: "")
+            .uppercased()
+    }
+
+    static func isValidIBANFormat(_ normalizedIBAN: String) -> Bool {
+        normalizedIBAN.range(of: "^[A-Z0-9]+$", options: .regularExpression) != nil
     }
 }

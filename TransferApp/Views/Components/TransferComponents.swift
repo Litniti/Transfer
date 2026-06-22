@@ -18,6 +18,7 @@ struct TransferStatusBadge: View {
             .background(backgroundColor.opacity(0.15))
             .foregroundStyle(backgroundColor)
             .clipShape(Capsule())
+            .accessibilityLabel("Status: \(status.rawValue)")
     }
 
     private var backgroundColor: Color {
@@ -46,6 +47,8 @@ struct DetailRow: View {
             Text(value)
                 .multilineTextAlignment(.trailing)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title): \(value)")
     }
 }
 

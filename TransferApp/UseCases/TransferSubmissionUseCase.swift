@@ -5,8 +5,12 @@
 
 import Foundation
 
-struct TransferSubmissionUseCase {
+struct TransferSubmissionUseCase: TransferSubmitting {
     let persistenceService: TransferPersistenceService
+
+    func submitTransfer(from draft: TransferDraft) async throws -> Transfer {
+        try await execute(from: draft)
+    }
 
     func execute(from draft: TransferDraft) async throws -> Transfer {
         try await Task.sleep(for: .milliseconds(800))

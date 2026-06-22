@@ -14,6 +14,9 @@
 		6473350A2FE080C40010EDB7 /* CreateTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335092FE080C30010EDB7 /* CreateTransferViewModel.swift */; };
 		647335132FE081000010EDB7 /* TransferRecapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335142FE081010010EDB7 /* TransferRecapViewModel.swift */; };
 		647335152FE081100010EDB7 /* TransferFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335162FE081110010EDB7 /* TransferFormValidation.swift */; };
+		647335332FE081C00010EDB7 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335342FE081C10010EDB7 /* AppDependencyContainer.swift */; };
+		647335352FE081C20010EDB7 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335362FE081C30010EDB7 /* AppTab.swift */; };
+		647335372FE081C40010EDB7 /* FormComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335382FE081C50010EDB7 /* FormComponents.swift */; };
 		647335172FE081200010EDB7 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335182FE081210010EDB7 /* NetworkingService.swift */; };
 		647335192FE081300010EDB7 /* LocalJSONNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */; };
 		6473351B2FE081400010EDB7 /* TransferPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */; };
@@ -44,6 +47,9 @@
 		647335092FE080C30010EDB7 /* CreateTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewModel.swift; sourceTree = "<group>"; };
 		647335142FE081010010EDB7 /* TransferRecapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapViewModel.swift; sourceTree = "<group>"; };
 		647335162FE081110010EDB7 /* TransferFormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormValidation.swift; sourceTree = "<group>"; };
+		647335342FE081C10010EDB7 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
+		647335362FE081C30010EDB7 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		647335382FE081C50010EDB7 /* FormComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponents.swift; sourceTree = "<group>"; };
 		647335182FE081210010EDB7 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONNetworkingService.swift; sourceTree = "<group>"; };
 		6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPersistenceService.swift; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */,
+				647335342FE081C10010EDB7 /* AppDependencyContainer.swift */,
+				647335362FE081C30010EDB7 /* AppTab.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -122,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				647335072FE080AA0010EDB7 /* Transfer.swift */,
-				647335162FE081110010EDB7 /* TransferFormValidation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				647335222FE081710010EDB7 /* TransferComponents.swift */,
+				647335382FE081C50010EDB7 /* FormComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 		647335322FE081BB0010EDB7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				647335162FE081110010EDB7 /* TransferFormValidation.swift */,
 				647335282FE081B10010EDB7 /* ValidationError.swift */,
 				6473352A2FE081B30010EDB7 /* TransferError.swift */,
 				6473352C2FE081B50010EDB7 /* LoadState.swift */,
@@ -360,6 +369,9 @@
 				6473352F2FE081B80010EDB7 /* TransferSubmissionUseCase.swift in Sources */,
 				6473351F2FE081600010EDB7 /* TransferFormatting.swift in Sources */,
 				647335212FE081700010EDB7 /* TransferComponents.swift in Sources */,
+				647335332FE081C00010EDB7 /* AppDependencyContainer.swift in Sources */,
+				647335352FE081C20010EDB7 /* AppTab.swift in Sources */,
+				647335372FE081C40010EDB7 /* FormComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ final class TransferRecapViewModel {
     }
 
     func confirm(
-        using submissionUseCase: TransferSubmissionUseCase,
+        using submissionUseCase: TransferSubmitting,
         historyStore: TransferHistoryStore
     ) async {
         guard submissionState.isInProgress == false else { return }
@@ -28,7 +28,7 @@ final class TransferRecapViewModel {
         submissionState = .inProgress
 
         do {
-            let transfer = try await submissionUseCase.execute(from: draft)
+            let transfer = try await submissionUseCase.submitTransfer(from: draft)
             await historyStore.applySubmittedTransfer(transfer)
             submissionState = .succeeded(transfer)
         } catch {

@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(AppDependencyContainer.self) private var dependencies
+    @State private var selectedTab: AppTab = .createTransfer
+
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             NavigationStack {
-                CreateTransferView()
+                CreateTransferView(selectedTab: $selectedTab)
             }
             .tabItem {
                 Label("New Transfer", systemImage: "plus.circle")
             }
+            .tag(AppTab.createTransfer)
 
             NavigationStack {
                 TransferHistoryView()
@@ -23,14 +27,13 @@ struct ContentView: View {
             .tabItem {
                 Label("History", systemImage: "clock.arrow.circlepath")
             }
+            .tag(AppTab.history)
         }
+        .environment(dependencies.historyStore)
     }
 }
 
 #Preview {
     ContentView()
-        .environment(TransferHistoryStore(
-            networkingService: LocalJSONNetworkingService(),
-            persistenceService: UserDefaultsTransferPersistenceService()
-        ))
+        .environment(AppDependencyContainer.preview)
 }
