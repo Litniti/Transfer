@@ -9,6 +9,11 @@ import SwiftUI
 
 struct TransferHistoryView: View {
     @Environment(TransferHistoryStore.self) private var historyStore
+    @State private var viewModel = TransferHistoryViewModel()
+
+    private var filteredTransfers: [Transfer] {
+        viewModel.filteredTransfers(from: historyStore.transfers)
+    }
 
     var body: some View {
         Group {
@@ -35,31 +40,50 @@ struct TransferHistoryView: View {
                     Text("Create a transfer to see it appear here.")
                 }
 
+            case .loaded where filteredTransfers.isEmpty:
+                ContentUnavailableView {
+                    Label("No Results", systemImage: "magnifyingglass")
+                } description: {
+                    Text("Try adjusting your search or filters.")
+                } actions: {
+                    Button("Clear Filters") { viewModel.clearFilters() }
+                }
+
             default:
-                List {
-                    if let warning = historyStore.loadState.warning {
-                        Section {
+                ScrollView {
+                    VStack(spacing: AppSpacing.sm) {
+                        if let warning = historyStore.loadState.warning {
                             Label(
-                                warning.errorDescription ?? "Some transfer data could not be refreshed.",
+                                warning.errorDescription ?? "Some data could not be refreshed.",
                                 systemImage: "exclamationmark.triangle"
                             )
-                            .font(.caption)
-                            .foregroundStyle(.orange)
+                            .font(AppFonts.caption)
+                            .foregroundStyle(AppColors.warningOrange)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(AppSpacing.md)
+                            .background(AppColors.warningOrange.opacity(0.1))
+                            .clipShape(RoundedRectangle(cornerRadius: AppSpacing.buttonRadius))
                         }
-                    }
 
-                    ForEach(historyStore.transfers) { transfer in
-                        NavigationLink(value: transfer) {
-                            TransferHistoryRow(transfer: transfer)
+                        statusFilterChips
+
+                        ForEach(filteredTransfers) { transfer in
+                            NavigationLink(value: transfer) {
+                                TransferRow(transfer: transfer, showsChevron: true)
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
+                    .padding(AppSpacing.md)
                 }
                 .refreshable {
                     await historyStore.loadTransfers()
                 }
             }
         }
+        .themedBackground()
         .navigationTitle("History")
+        .searchable(text: $viewModel.searchText, prompt: "Search beneficiary or reason")
         .navigationDestination(for: Transfer.self) { transfer in
             TransferDetailView(transfer: transfer)
         }
@@ -67,32 +91,42 @@ struct TransferHistoryView: View {
             await historyStore.loadTransfers()
         }
     }
-}
 
-private struct TransferHistoryRow: View {
-    let transfer: Transfer
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Text(transfer.beneficiary)
-                    .font(.headline)
-                Spacer()
-                TransferStatusBadge(status: transfer.status)
+    private var statusFilterChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: AppSpacing.xs) {
+                filterChip(title: "All", isSelected: viewModel.selectedStatusFilter == nil) {
+                    viewModel.selectedStatusFilter = nil
+                }
+                ForEach(TransferStatus.allCases) { status in
+                    filterChip(
+                        title: status.displayName,
+                        isSelected: viewModel.selectedStatusFilter == status
+                    ) {
+                        viewModel.selectedStatusFilter = status
+                    }
+                }
             }
-
-            Text(TransferFormatting.amount(transfer.amount, currency: transfer.currency))
-                .font(.subheadline)
-
-            Text(TransferFormatting.dateTime(transfer.createdAt))
-                .font(.caption)
-                .foregroundStyle(.secondary)
         }
-        .padding(.vertical, 4)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(
-            "\(transfer.beneficiary), \(TransferFormatting.amount(transfer.amount, currency: transfer.currency)), \(transfer.status.rawValue), \(TransferFormatting.dateTime(transfer.createdAt))"
-        )
+    }
+
+    private func filterChip(
+        title: String,
+        isSelected: Bool,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Text(title)
+                .font(AppFonts.caption.weight(.semibold))
+                .padding(.horizontal, AppSpacing.sm)
+                .padding(.vertical, AppSpacing.xs)
+                .background(isSelected ? AppColors.primaryBlue : AppColors.cardBackground)
+                .foregroundStyle(isSelected ? .white : AppColors.secondaryText)
+                .clipShape(Capsule())
+                .shadow(color: .black.opacity(0.04), radius: 2, y: 1)
+        }
+        .accessibilityLabel("\(title) filter")
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 

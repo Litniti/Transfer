@@ -14,89 +14,77 @@ struct CreateTransferView: View {
 
     var body: some View {
         Form {
-            Section("Beneficiary") {
+            Section {
                 TextField("Beneficiary name", text: $viewModel.beneficiary)
                     .textContentType(.name)
                     .autocorrectionDisabled()
-                    .accessibilityLabel("Beneficiary name")
-                    .onChange(of: viewModel.beneficiary) {
-                        viewModel.clearError(for: .beneficiary)
-                    }
-
+                    .onChange(of: viewModel.beneficiary) { viewModel.clearError(for: .beneficiary) }
                 if let error = viewModel.errorMessage(for: .beneficiary) {
                     FormErrorMessage(message: error)
                 }
+            } header: {
+                Text("Beneficiary")
             }
 
-            Section("Account") {
+            Section {
                 TextField("IBAN", text: $viewModel.iban)
                     .textInputAutocapitalization(.characters)
                     .autocorrectionDisabled()
-                    .accessibilityLabel("IBAN")
-                    .onChange(of: viewModel.iban) {
-                        viewModel.clearError(for: .iban)
-                    }
-
+                    .onChange(of: viewModel.iban) { viewModel.clearError(for: .iban) }
                 if let error = viewModel.errorMessage(for: .iban) {
                     FormErrorMessage(message: error)
                 }
+            } header: {
+                Text("Account")
             }
 
-            Section("Amount") {
+            Section {
                 TextField("Amount", text: $viewModel.amount)
                     .keyboardType(.decimalPad)
-                    .accessibilityLabel("Transfer amount")
-                    .onChange(of: viewModel.amount) {
-                        viewModel.clearError(for: .amount)
-                    }
-
+                    .onChange(of: viewModel.amount) { viewModel.clearError(for: .amount) }
                 Picker("Currency", selection: $viewModel.currency) {
                     ForEach(Currency.allCases) { currency in
                         Text(currency.rawValue).tag(currency)
                     }
                 }
-                .accessibilityLabel("Currency")
-
                 if let error = viewModel.errorMessage(for: .amount) {
                     FormErrorMessage(message: error)
                 }
+            } header: {
+                Text("Amount")
             }
 
-            Section("Details") {
+            Section {
                 TextField("Transfer reason", text: $viewModel.reason)
                     .autocorrectionDisabled()
-                    .accessibilityLabel("Transfer reason")
-                    .onChange(of: viewModel.reason) {
-                        viewModel.clearError(for: .reason)
-                    }
-
+                    .onChange(of: viewModel.reason) { viewModel.clearError(for: .reason) }
                 if let error = viewModel.errorMessage(for: .reason) {
                     FormErrorMessage(message: error)
                 }
 
                 if viewModel.isInstant {
                     Text("Instant transfers are executed immediately.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .font(AppFonts.caption)
+                        .foregroundStyle(AppColors.secondaryText)
                 } else {
                     executionDatePicker
-                        .onChange(of: viewModel.executionDate) {
-                            viewModel.clearError(for: .executionDate)
-                        }
-
+                        .onChange(of: viewModel.executionDate) { viewModel.clearError(for: .executionDate) }
                     if let error = viewModel.errorMessage(for: .executionDate) {
                         FormErrorMessage(message: error)
                     }
                 }
 
                 Toggle("Instant transfer", isOn: $viewModel.isInstant)
-                    .accessibilityHint("When enabled, the transfer runs immediately instead of on the selected date.")
+            } header: {
+                Text("Details")
             }
         }
-        .navigationTitle("New Transfer")
+        .scrollContentBackground(.hidden)
+        .themedBackground()
+        .navigationTitle("Transfer")
         .keyboardDismissToolbar()
         .safeAreaInset(edge: .bottom) {
-            PrimaryBottomButton("Review Transfer") {
+            PrimaryBottomButton(title: "Review Transfer") {
                 if let draft = viewModel.makeDraft() {
                     draftForRecap = draft
                 }
@@ -106,9 +94,7 @@ struct CreateTransferView: View {
             TransferRecapView(
                 draft: draft,
                 selectedTab: $selectedTab,
-                onCompletion: {
-                    viewModel.reset()
-                }
+                onCompletion: { viewModel.reset() }
             )
         }
     }
@@ -133,8 +119,7 @@ struct CreateTransferView: View {
 }
 
 #Preview {
-    @Previewable @State var tab = AppTab.createTransfer
-
+    @Previewable @State var tab = AppTab.transfer
     NavigationStack {
         CreateTransferView(selectedTab: $tab)
     }

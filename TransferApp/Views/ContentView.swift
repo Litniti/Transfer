@@ -9,17 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(AppDependencyContainer.self) private var dependencies
-    @State private var selectedTab: AppTab = .createTransfer
+    @State private var selectedTab: AppTab = .dashboard
 
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
+                DashboardView(selectedTab: $selectedTab)
+            }
+            .tabItem {
+                Label("Dashboard", systemImage: "house.fill")
+            }
+            .tag(AppTab.dashboard)
+
+            NavigationStack {
                 CreateTransferView(selectedTab: $selectedTab)
             }
             .tabItem {
-                Label("New Transfer", systemImage: "plus.circle")
+                Label("Transfer", systemImage: "paperplane.fill")
             }
-            .tag(AppTab.createTransfer)
+            .tag(AppTab.transfer)
 
             NavigationStack {
                 TransferHistoryView()
@@ -28,8 +36,18 @@ struct ContentView: View {
                 Label("History", systemImage: "clock.arrow.circlepath")
             }
             .tag(AppTab.history)
+
+            NavigationStack {
+                ProfileView()
+            }
+            .tabItem {
+                Label("Profile", systemImage: "person.fill")
+            }
+            .tag(AppTab.profile)
         }
+        .tint(AppColors.primaryBlue)
         .environment(dependencies.historyStore)
+        .preferredColorScheme(dependencies.appearanceStore.colorScheme)
     }
 }
 

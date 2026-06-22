@@ -12,10 +12,10 @@ struct TransferDetailView: View {
 
     var body: some View {
         List {
-            Section("Status") {
+            Section {
                 HStack {
                     Text("Status")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppColors.secondaryText)
                     Spacer()
                     TransferStatusBadge(status: transfer.status)
                 }
@@ -46,8 +46,10 @@ struct TransferDetailView: View {
                 DetailRow(title: "Transfer type", value: transfer.transferType.rawValue)
             }
         }
+        .listStyle(.insetGrouped)
         .navigationTitle("Transfer Details")
         .navigationBarTitleDisplayMode(.inline)
+        .themedBackground()
     }
 }
 

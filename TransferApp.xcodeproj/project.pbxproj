@@ -16,9 +16,28 @@
 		647335152FE081100010EDB7 /* TransferFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335162FE081110010EDB7 /* TransferFormValidation.swift */; };
 		647335332FE081C00010EDB7 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335342FE081C10010EDB7 /* AppDependencyContainer.swift */; };
 		647335352FE081C20010EDB7 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335362FE081C30010EDB7 /* AppTab.swift */; };
-		647335372FE081C40010EDB7 /* FormComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335382FE081C50010EDB7 /* FormComponents.swift */; };
+		647335372FE081C40010EDB7 /* FormUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335462FE081DD0010EDB7 /* FormUtilities.swift */; };
 		647335172FE081200010EDB7 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335182FE081210010EDB7 /* NetworkingService.swift */; };
 		647335192FE081300010EDB7 /* LocalJSONNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */; };
+		647335A12FE082000010EDB7 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A22FE082010010EDB7 /* AppColors.swift */; };
+		647335A32FE082020010EDB7 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A42FE082030010EDB7 /* AppFonts.swift */; };
+		647335A52FE082040010EDB7 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A62FE082050010EDB7 /* AppSpacing.swift */; };
+		647335A72FE082060010EDB7 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A82FE082070010EDB7 /* AppAppearance.swift */; };
+		647335A92FE082080010EDB7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335AA2FE082090010EDB7 /* UserProfile.swift */; };
+		647335AB2FE0820A0010EDB7 /* TransferStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335AC2FE0820B0010EDB7 /* TransferStatistics.swift */; };
+		647335AD2FE0820C0010EDB7 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335AE2FE0820D0010EDB7 /* UserProfileService.swift */; };
+		647335AF2FE0820E0010EDB7 /* TransferStatisticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335B02FE0820F0010EDB7 /* TransferStatisticsService.swift */; };
+		647335B12FE082100010EDB7 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335B22FE082110010EDB7 /* SectionHeader.swift */; };
+		647335B32FE082120010EDB7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335B42FE082130010EDB7 /* PrimaryButton.swift */; };
+		647335B52FE082140010EDB7 /* InfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335B62FE082150010EDB7 /* InfoCard.swift */; };
+		647335B72FE082160010EDB7 /* BalanceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335B82FE082170010EDB7 /* BalanceCard.swift */; };
+		647335B92FE082180010EDB7 /* TransferRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335BA2FE082190010EDB7 /* TransferRow.swift */; };
+		647335BB2FE0821A0010EDB7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335BC2FE0821B0010EDB7 /* DashboardViewModel.swift */; };
+		647335BD2FE0821C0010EDB7 /* TransferHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335BE2FE0821D0010EDB7 /* TransferHistoryViewModel.swift */; };
+		647335BF2FE0821E0010EDB7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C02FE0821F0010EDB7 /* ProfileViewModel.swift */; };
+		647335C12FE082200010EDB7 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C22FE082210010EDB7 /* DashboardView.swift */; };
+		647335C32FE082220010EDB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C42FE082230010EDB7 /* ProfileView.swift */; };
+		647335C52FE082240010EDB7 /* TransferSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C62FE082250010EDB7 /* TransferSuccessView.swift */; };
 		6473351B2FE081400010EDB7 /* TransferPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */; };
 		6473351D2FE081500010EDB7 /* TransferHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */; };
 		647335272FE081B00010EDB7 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335282FE081B10010EDB7 /* ValidationError.swift */; };
@@ -27,7 +46,6 @@
 		6473352D2FE081B60010EDB7 /* OperationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352E2FE081B70010EDB7 /* OperationState.swift */; };
 		6473352F2FE081B80010EDB7 /* TransferSubmissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */; };
 		6473351F2FE081600010EDB7 /* TransferFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335202FE081610010EDB7 /* TransferFormatting.swift */; };
-		647335212FE081700010EDB7 /* TransferComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335222FE081710010EDB7 /* TransferComponents.swift */; };
 		647335232FE081800010EDB7 /* transfers.json in Resources */ = {isa = PBXBuildFile; fileRef = 647335242FE081810010EDB7 /* transfers.json */; };
 		6473350C2FE080D60010EDB7 /* CreateTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350B2FE080D40010EDB7 /* CreateTransferView.swift */; };
 		6473350E2FE080E70010EDB7 /* TransferRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350D2FE080E60010EDB7 /* TransferRecapView.swift */; };
@@ -49,7 +67,26 @@
 		647335162FE081110010EDB7 /* TransferFormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormValidation.swift; sourceTree = "<group>"; };
 		647335342FE081C10010EDB7 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		647335362FE081C30010EDB7 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
-		647335382FE081C50010EDB7 /* FormComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponents.swift; sourceTree = "<group>"; };
+		647335462FE081DD0010EDB7 /* FormUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUtilities.swift; sourceTree = "<group>"; };
+		647335A22FE082010010EDB7 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		647335A42FE082030010EDB7 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		647335A62FE082050010EDB7 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		647335A82FE082070010EDB7 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		647335AA2FE082090010EDB7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		647335AC2FE0820B0010EDB7 /* TransferStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferStatistics.swift; sourceTree = "<group>"; };
+		647335AE2FE0820D0010EDB7 /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
+		647335B02FE0820F0010EDB7 /* TransferStatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferStatisticsService.swift; sourceTree = "<group>"; };
+		647335B22FE082110010EDB7 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		647335B42FE082130010EDB7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		647335B62FE082150010EDB7 /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
+		647335B82FE082170010EDB7 /* BalanceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCard.swift; sourceTree = "<group>"; };
+		647335BA2FE082190010EDB7 /* TransferRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRow.swift; sourceTree = "<group>"; };
+		647335BC2FE0821B0010EDB7 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		647335BE2FE0821D0010EDB7 /* TransferHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryViewModel.swift; sourceTree = "<group>"; };
+		647335C02FE0821F0010EDB7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		647335C22FE082210010EDB7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		647335C42FE082230010EDB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		647335C62FE082250010EDB7 /* TransferSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSuccessView.swift; sourceTree = "<group>"; };
 		647335182FE081210010EDB7 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONNetworkingService.swift; sourceTree = "<group>"; };
 		6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPersistenceService.swift; sourceTree = "<group>"; };
@@ -60,7 +97,6 @@
 		6473352E2FE081B70010EDB7 /* OperationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationState.swift; sourceTree = "<group>"; };
 		647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSubmissionUseCase.swift; sourceTree = "<group>"; };
 		647335202FE081610010EDB7 /* TransferFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormatting.swift; sourceTree = "<group>"; };
-		647335222FE081710010EDB7 /* TransferComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferComponents.swift; sourceTree = "<group>"; };
 		647335242FE081810010EDB7 /* transfers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transfers.json; sourceTree = "<group>"; };
 		6473350B2FE080D40010EDB7 /* CreateTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferView.swift; sourceTree = "<group>"; };
 		6473350D2FE080E60010EDB7 /* TransferRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapView.swift; sourceTree = "<group>"; };
@@ -102,6 +138,9 @@
 		647334FD2FE07FDC0010EDB7 /* TransferApp */ = {
 			isa = PBXGroup;
 			children = (
+				647335C72FE082260010EDB7 /* Theme */,
+				647335C82FE082270010EDB7 /* Components */,
+				647335C92FE082280010EDB7 /* Network */,
 				647335252FE081900010EDB7 /* Services */,
 				647335312FE081BA0010EDB7 /* UseCases */,
 				647335322FE081BB0010EDB7 /* Domain */,
@@ -114,6 +153,39 @@
 				647334FA2FE07FDC0010EDB7 /* Assets.xcassets */,
 			);
 			path = TransferApp;
+			sourceTree = "<group>";
+		};
+		647335C72FE082260010EDB7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				647335A22FE082010010EDB7 /* AppColors.swift */,
+				647335A42FE082030010EDB7 /* AppFonts.swift */,
+				647335A62FE082050010EDB7 /* AppSpacing.swift */,
+				647335A82FE082070010EDB7 /* AppAppearance.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		647335C82FE082270010EDB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				647335B22FE082110010EDB7 /* SectionHeader.swift */,
+				647335B42FE082130010EDB7 /* PrimaryButton.swift */,
+				647335B62FE082150010EDB7 /* InfoCard.swift */,
+				647335B82FE082170010EDB7 /* BalanceCard.swift */,
+				647335BA2FE082190010EDB7 /* TransferRow.swift */,
+				647335462FE081DD0010EDB7 /* FormUtilities.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		647335C92FE082280010EDB7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				647335182FE081210010EDB7 /* NetworkingService.swift */,
+				6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		647335012FE07FEF0010EDB7 /* App */ = {
@@ -130,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				647335072FE080AA0010EDB7 /* Transfer.swift */,
+				647335AA2FE082090010EDB7 /* UserProfile.swift */,
+				647335AC2FE0820B0010EDB7 /* TransferStatistics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,23 +211,16 @@
 		647335032FE0802F0010EDB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				647335262FE081A00010EDB7 /* Components */,
+				647335C22FE082210010EDB7 /* DashboardView.swift */,
 				647335112FE080F10010EDB7 /* TransferDetailView.swift */,
 				6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */,
 				6473350D2FE080E60010EDB7 /* TransferRecapView.swift */,
+				647335C62FE082250010EDB7 /* TransferSuccessView.swift */,
 				6473350B2FE080D40010EDB7 /* CreateTransferView.swift */,
+				647335C42FE082230010EDB7 /* ProfileView.swift */,
 				647334FB2FE07FDC0010EDB7 /* ContentView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		647335262FE081A00010EDB7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				647335222FE081710010EDB7 /* TransferComponents.swift */,
-				647335382FE081C50010EDB7 /* FormComponents.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		647335042FE080340010EDB7 /* ViewModels */ = {
@@ -161,6 +228,9 @@
 			children = (
 				647335092FE080C30010EDB7 /* CreateTransferViewModel.swift */,
 				647335142FE081010010EDB7 /* TransferRecapViewModel.swift */,
+				647335BC2FE0821B0010EDB7 /* DashboardViewModel.swift */,
+				647335BE2FE0821D0010EDB7 /* TransferHistoryViewModel.swift */,
+				647335C02FE0821F0010EDB7 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -168,10 +238,10 @@
 		647335252FE081900010EDB7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				647335182FE081210010EDB7 /* NetworkingService.swift */,
-				6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */,
 				6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */,
 				6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */,
+				647335AE2FE0820D0010EDB7 /* UserProfileService.swift */,
+				647335B02FE0820F0010EDB7 /* TransferStatisticsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -368,10 +438,28 @@
 				6473352D2FE081B60010EDB7 /* OperationState.swift in Sources */,
 				6473352F2FE081B80010EDB7 /* TransferSubmissionUseCase.swift in Sources */,
 				6473351F2FE081600010EDB7 /* TransferFormatting.swift in Sources */,
-				647335212FE081700010EDB7 /* TransferComponents.swift in Sources */,
 				647335332FE081C00010EDB7 /* AppDependencyContainer.swift in Sources */,
 				647335352FE081C20010EDB7 /* AppTab.swift in Sources */,
-				647335372FE081C40010EDB7 /* FormComponents.swift in Sources */,
+				647335372FE081C40010EDB7 /* FormUtilities.swift in Sources */,
+				647335A12FE082000010EDB7 /* AppColors.swift in Sources */,
+				647335A32FE082020010EDB7 /* AppFonts.swift in Sources */,
+				647335A52FE082040010EDB7 /* AppSpacing.swift in Sources */,
+				647335A72FE082060010EDB7 /* AppAppearance.swift in Sources */,
+				647335A92FE082080010EDB7 /* UserProfile.swift in Sources */,
+				647335AB2FE0820A0010EDB7 /* TransferStatistics.swift in Sources */,
+				647335AD2FE0820C0010EDB7 /* UserProfileService.swift in Sources */,
+				647335AF2FE0820E0010EDB7 /* TransferStatisticsService.swift in Sources */,
+				647335B12FE082100010EDB7 /* SectionHeader.swift in Sources */,
+				647335B32FE082120010EDB7 /* PrimaryButton.swift in Sources */,
+				647335B52FE082140010EDB7 /* InfoCard.swift in Sources */,
+				647335B72FE082160010EDB7 /* BalanceCard.swift in Sources */,
+				647335B92FE082180010EDB7 /* TransferRow.swift in Sources */,
+				647335BB2FE0821A0010EDB7 /* DashboardViewModel.swift in Sources */,
+				647335BD2FE0821C0010EDB7 /* TransferHistoryViewModel.swift in Sources */,
+				647335BF2FE0821E0010EDB7 /* ProfileViewModel.swift in Sources */,
+				647335C12FE082200010EDB7 /* DashboardView.swift in Sources */,
+				647335C32FE082220010EDB7 /* ProfileView.swift in Sources */,
+				647335C52FE082240010EDB7 /* TransferSuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

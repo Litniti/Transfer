@@ -9,11 +9,10 @@ import SwiftUI
 
 struct TransferRecapView: View {
     @Environment(AppDependencyContainer.self) private var dependencies
-    @Environment(\.dismiss) private var dismiss
 
     @Binding var selectedTab: AppTab
     @State private var viewModel: TransferRecapViewModel
-    @State private var showSuccessAlert = false
+    @State private var submittedTransfer: Transfer?
 
     let onCompletion: () -> Void
 
@@ -28,8 +27,23 @@ struct TransferRecapView: View {
     }
 
     var body: some View {
+        Group {
+            if let transfer = submittedTransfer {
+                TransferSuccessView(
+                    transfer: transfer,
+                    selectedTab: $selectedTab,
+                    onDone: onCompletion
+                )
+            } else {
+                recapContent
+            }
+        }
+        .navigationBarBackButtonHidden(submittedTransfer != nil)
+    }
+
+    private var recapContent: some View {
         List {
-            Section("Summary") {
+            Section {
                 DetailRow(title: "Beneficiary", value: viewModel.draft.beneficiary)
                 DetailRow(title: "IBAN", value: viewModel.draft.iban)
                 DetailRow(
@@ -41,17 +55,19 @@ struct TransferRecapView: View {
                 )
                 DetailRow(title: "Reason", value: viewModel.draft.reason)
                 DetailRow(
-                    title: "Execution date",
+                    title: "Execution",
                     value: viewModel.draft.isInstant
                         ? "Immediately"
                         : TransferFormatting.dateTime(viewModel.draft.executionDate)
                 )
                 DetailRow(
-                    title: "Transfer type",
+                    title: "Type",
                     value: viewModel.draft.isInstant
                         ? TransferType.instant.rawValue
                         : TransferType.scheduled.rawValue
                 )
+            } header: {
+                Text("Summary")
             }
 
             if let error = viewModel.submissionState.error {
@@ -60,11 +76,12 @@ struct TransferRecapView: View {
                 }
             }
         }
+        .listStyle(.insetGrouped)
         .navigationTitle("Recap")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) {
             PrimaryBottomButton(
-                "Confirm Transfer",
+                title: "Confirm Transfer",
                 isLoading: viewModel.submissionState.isInProgress
             ) {
                 Task {
@@ -72,31 +89,17 @@ struct TransferRecapView: View {
                         using: dependencies.submissionUseCase,
                         historyStore: dependencies.historyStore
                     )
-                    if viewModel.submissionState.result != nil {
-                        showSuccessAlert = true
+                    if let transfer = viewModel.submissionState.result {
+                        submittedTransfer = transfer
                     }
                 }
             }
-        }
-        .alert("Transfer Submitted", isPresented: $showSuccessAlert) {
-            Button("View History") {
-                onCompletion()
-                dismiss()
-                selectedTab = .history
-            }
-            Button("Create Another", role: .cancel) {
-                onCompletion()
-                dismiss()
-            }
-        } message: {
-            Text("Your transfer has been submitted and saved to history.")
         }
     }
 }
 
 #Preview {
-    @Previewable @State var tab = AppTab.createTransfer
-
+    @Previewable @State var tab = AppTab.transfer
     NavigationStack {
         TransferRecapView(
             draft: TransferDraft(

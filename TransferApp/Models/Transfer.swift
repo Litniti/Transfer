@@ -87,11 +87,27 @@ struct Transfer: Identifiable, Codable, Hashable {
     }
 }
 
-enum TransferStatus: String, Codable, CaseIterable {
-    case pending = "Pending"
-    case processing = "Processing"
+enum TransferStatus: String, Codable, CaseIterable, Identifiable {
     case completed = "Completed"
+    case pending = "Pending"
     case failed = "Failed"
+
+    var id: String { rawValue }
+
+    var displayName: String { rawValue }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let raw = try container.decode(String.self)
+        switch raw {
+        case Self.completed.rawValue:
+            self = .completed
+        case Self.failed.rawValue:
+            self = .failed
+        default:
+            self = .pending
+        }
+    }
 }
 
 enum TransferType: String, CaseIterable {

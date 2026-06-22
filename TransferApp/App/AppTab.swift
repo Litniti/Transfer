@@ -8,6 +8,8 @@
 import Foundation
 
 enum AppTab: Hashable {
-    case createTransfer
+    case dashboard
+    case transfer
     case history
+    case profile
 }

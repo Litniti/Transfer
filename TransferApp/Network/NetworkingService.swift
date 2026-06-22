@@ -11,7 +11,6 @@ protocol NetworkingService {
     func fetchTransfers() async throws -> [Transfer]
 }
 
-/// Abstraction for submitting transfers. Implement with a remote API in production.
 protocol TransferSubmitting {
     func submitTransfer(from draft: TransferDraft) async throws -> Transfer
 }
