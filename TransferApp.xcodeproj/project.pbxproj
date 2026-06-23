@@ -12,13 +12,26 @@
 		647335002FE07FDC0010EDB7 /* TransferAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */; };
 		647335082FE080B10010EDB7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335072FE080AA0010EDB7 /* Transfer.swift */; };
 		6473350A2FE080C40010EDB7 /* CreateTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335092FE080C30010EDB7 /* CreateTransferViewModel.swift */; };
+		6473350C2FE080D60010EDB7 /* CreateTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350B2FE080D40010EDB7 /* CreateTransferView.swift */; };
+		6473350E2FE080E70010EDB7 /* TransferRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350D2FE080E60010EDB7 /* TransferRecapView.swift */; };
+		647335102FE080ED0010EDB7 /* TransferHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */; };
+		647335122FE080F20010EDB7 /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335112FE080F10010EDB7 /* TransferDetailView.swift */; };
 		647335132FE081000010EDB7 /* TransferRecapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335142FE081010010EDB7 /* TransferRecapViewModel.swift */; };
 		647335152FE081100010EDB7 /* TransferFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335162FE081110010EDB7 /* TransferFormValidation.swift */; };
+		647335172FE081200010EDB7 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335182FE081210010EDB7 /* NetworkingService.swift */; };
+		647335192FE081300010EDB7 /* LocalJSONNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */; };
+		6473351B2FE081400010EDB7 /* TransferPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */; };
+		6473351D2FE081500010EDB7 /* TransferHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */; };
+		6473351F2FE081600010EDB7 /* TransferFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335202FE081610010EDB7 /* TransferFormatting.swift */; };
+		647335232FE081800010EDB7 /* transfers.json in Resources */ = {isa = PBXBuildFile; fileRef = 647335242FE081810010EDB7 /* transfers.json */; };
+		647335272FE081B00010EDB7 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335282FE081B10010EDB7 /* ValidationError.swift */; };
+		647335292FE081B20010EDB7 /* TransferError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352A2FE081B30010EDB7 /* TransferError.swift */; };
+		6473352B2FE081B40010EDB7 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352C2FE081B50010EDB7 /* LoadState.swift */; };
+		6473352D2FE081B60010EDB7 /* OperationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352E2FE081B70010EDB7 /* OperationState.swift */; };
+		6473352F2FE081B80010EDB7 /* TransferSubmissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */; };
 		647335332FE081C00010EDB7 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335342FE081C10010EDB7 /* AppDependencyContainer.swift */; };
 		647335352FE081C20010EDB7 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335362FE081C30010EDB7 /* AppTab.swift */; };
 		647335372FE081C40010EDB7 /* FormUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335462FE081DD0010EDB7 /* FormUtilities.swift */; };
-		647335172FE081200010EDB7 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335182FE081210010EDB7 /* NetworkingService.swift */; };
-		647335192FE081300010EDB7 /* LocalJSONNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */; };
 		647335A12FE082000010EDB7 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A22FE082010010EDB7 /* AppColors.swift */; };
 		647335A32FE082020010EDB7 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A42FE082030010EDB7 /* AppFonts.swift */; };
 		647335A52FE082040010EDB7 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335A62FE082050010EDB7 /* AppSpacing.swift */; };
@@ -38,33 +51,33 @@
 		647335C12FE082200010EDB7 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C22FE082210010EDB7 /* DashboardView.swift */; };
 		647335C32FE082220010EDB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C42FE082230010EDB7 /* ProfileView.swift */; };
 		647335C52FE082240010EDB7 /* TransferSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335C62FE082250010EDB7 /* TransferSuccessView.swift */; };
-		6473351B2FE081400010EDB7 /* TransferPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */; };
-		6473351D2FE081500010EDB7 /* TransferHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */; };
-		647335272FE081B00010EDB7 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335282FE081B10010EDB7 /* ValidationError.swift */; };
-		647335292FE081B20010EDB7 /* TransferError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352A2FE081B30010EDB7 /* TransferError.swift */; };
-		6473352B2FE081B40010EDB7 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352C2FE081B50010EDB7 /* LoadState.swift */; };
-		6473352D2FE081B60010EDB7 /* OperationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473352E2FE081B70010EDB7 /* OperationState.swift */; };
-		6473352F2FE081B80010EDB7 /* TransferSubmissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */; };
-		6473351F2FE081600010EDB7 /* TransferFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335202FE081610010EDB7 /* TransferFormatting.swift */; };
-		647335232FE081800010EDB7 /* transfers.json in Resources */ = {isa = PBXBuildFile; fileRef = 647335242FE081810010EDB7 /* transfers.json */; };
-		6473350C2FE080D60010EDB7 /* CreateTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350B2FE080D40010EDB7 /* CreateTransferView.swift */; };
-		6473350E2FE080E70010EDB7 /* TransferRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350D2FE080E60010EDB7 /* TransferRecapView.swift */; };
-		647335102FE080ED0010EDB7 /* TransferHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */; };
-		647335122FE080F20010EDB7 /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647335112FE080F10010EDB7 /* TransferDetailView.swift */; };
-		B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F325F149C335D7F132A03F2 /* Pods_TransferApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransferApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.release.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.release.xcconfig"; sourceTree = "<group>"; };
 		6466ED262FE0791B00FFBCF8 /* TransferApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647334FA2FE07FDC0010EDB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		647334FB2FE07FDC0010EDB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		647334FC2FE07FDC0010EDB7 /* TransferAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAppApp.swift; sourceTree = "<group>"; };
 		647335072FE080AA0010EDB7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		647335092FE080C30010EDB7 /* CreateTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewModel.swift; sourceTree = "<group>"; };
+		6473350B2FE080D40010EDB7 /* CreateTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferView.swift; sourceTree = "<group>"; };
+		6473350D2FE080E60010EDB7 /* TransferRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapView.swift; sourceTree = "<group>"; };
+		6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryView.swift; sourceTree = "<group>"; };
+		647335112FE080F10010EDB7 /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
 		647335142FE081010010EDB7 /* TransferRecapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapViewModel.swift; sourceTree = "<group>"; };
 		647335162FE081110010EDB7 /* TransferFormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormValidation.swift; sourceTree = "<group>"; };
+		647335182FE081210010EDB7 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONNetworkingService.swift; sourceTree = "<group>"; };
+		6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPersistenceService.swift; sourceTree = "<group>"; };
+		6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryStore.swift; sourceTree = "<group>"; };
+		647335202FE081610010EDB7 /* TransferFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormatting.swift; sourceTree = "<group>"; };
+		647335242FE081810010EDB7 /* transfers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transfers.json; sourceTree = "<group>"; };
+		647335282FE081B10010EDB7 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		6473352A2FE081B30010EDB7 /* TransferError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferError.swift; sourceTree = "<group>"; };
+		6473352C2FE081B50010EDB7 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		6473352E2FE081B70010EDB7 /* OperationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationState.swift; sourceTree = "<group>"; };
+		647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSubmissionUseCase.swift; sourceTree = "<group>"; };
 		647335342FE081C10010EDB7 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		647335362FE081C30010EDB7 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		647335462FE081DD0010EDB7 /* FormUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUtilities.swift; sourceTree = "<group>"; };
@@ -87,22 +100,6 @@
 		647335C22FE082210010EDB7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		647335C42FE082230010EDB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		647335C62FE082250010EDB7 /* TransferSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSuccessView.swift; sourceTree = "<group>"; };
-		647335182FE081210010EDB7 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONNetworkingService.swift; sourceTree = "<group>"; };
-		6473351C2FE081410010EDB7 /* TransferPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPersistenceService.swift; sourceTree = "<group>"; };
-		6473351E2FE081510010EDB7 /* TransferHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryStore.swift; sourceTree = "<group>"; };
-		647335282FE081B10010EDB7 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
-		6473352A2FE081B30010EDB7 /* TransferError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferError.swift; sourceTree = "<group>"; };
-		6473352C2FE081B50010EDB7 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
-		6473352E2FE081B70010EDB7 /* OperationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationState.swift; sourceTree = "<group>"; };
-		647335302FE081B90010EDB7 /* TransferSubmissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSubmissionUseCase.swift; sourceTree = "<group>"; };
-		647335202FE081610010EDB7 /* TransferFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormatting.swift; sourceTree = "<group>"; };
-		647335242FE081810010EDB7 /* transfers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transfers.json; sourceTree = "<group>"; };
-		6473350B2FE080D40010EDB7 /* CreateTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferView.swift; sourceTree = "<group>"; };
-		6473350D2FE080E60010EDB7 /* TransferRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRecapView.swift; sourceTree = "<group>"; };
-		6473350F2FE080EC0010EDB7 /* TransferHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHistoryView.swift; sourceTree = "<group>"; };
-		647335112FE080F10010EDB7 /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
-		C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransferApp.debug.xcconfig"; path = "Target Support Files/Pods-TransferApp/Pods-TransferApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60AB9B2A985229517E2CE6B /* Pods_TransferApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +118,6 @@
 			children = (
 				647334FD2FE07FDC0010EDB7 /* TransferApp */,
 				6466ED272FE0791B00FFBCF8 /* Products */,
-				93D78A93406B5B1F0380F8F8 /* Pods */,
 				C58A76678FB607DF696B4562 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -153,39 +148,6 @@
 				647334FA2FE07FDC0010EDB7 /* Assets.xcassets */,
 			);
 			path = TransferApp;
-			sourceTree = "<group>";
-		};
-		647335C72FE082260010EDB7 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				647335A22FE082010010EDB7 /* AppColors.swift */,
-				647335A42FE082030010EDB7 /* AppFonts.swift */,
-				647335A62FE082050010EDB7 /* AppSpacing.swift */,
-				647335A82FE082070010EDB7 /* AppAppearance.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		647335C82FE082270010EDB7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				647335B22FE082110010EDB7 /* SectionHeader.swift */,
-				647335B42FE082130010EDB7 /* PrimaryButton.swift */,
-				647335B62FE082150010EDB7 /* InfoCard.swift */,
-				647335B82FE082170010EDB7 /* BalanceCard.swift */,
-				647335BA2FE082190010EDB7 /* TransferRow.swift */,
-				647335462FE081DD0010EDB7 /* FormUtilities.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		647335C92FE082280010EDB7 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				647335182FE081210010EDB7 /* NetworkingService.swift */,
-				6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		647335012FE07FEF0010EDB7 /* App */ = {
@@ -235,6 +197,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		647335052FE080450010EDB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				647335242FE081810010EDB7 /* transfers.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		647335062FE080510010EDB7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				647335202FE081610010EDB7 /* TransferFormatting.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		647335252FE081900010EDB7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,29 +244,37 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		647335052FE080450010EDB7 /* Resources */ = {
+		647335C72FE082260010EDB7 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				647335242FE081810010EDB7 /* transfers.json */,
+				647335A22FE082010010EDB7 /* AppColors.swift */,
+				647335A42FE082030010EDB7 /* AppFonts.swift */,
+				647335A62FE082050010EDB7 /* AppSpacing.swift */,
+				647335A82FE082070010EDB7 /* AppAppearance.swift */,
 			);
-			path = Resources;
+			path = Theme;
 			sourceTree = "<group>";
 		};
-		647335062FE080510010EDB7 /* Utils */ = {
+		647335C82FE082270010EDB7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				647335202FE081610010EDB7 /* TransferFormatting.swift */,
+				647335B22FE082110010EDB7 /* SectionHeader.swift */,
+				647335B42FE082130010EDB7 /* PrimaryButton.swift */,
+				647335B62FE082150010EDB7 /* InfoCard.swift */,
+				647335B82FE082170010EDB7 /* BalanceCard.swift */,
+				647335BA2FE082190010EDB7 /* TransferRow.swift */,
+				647335462FE081DD0010EDB7 /* FormUtilities.swift */,
 			);
-			path = Utils;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		93D78A93406B5B1F0380F8F8 /* Pods */ = {
+		647335C92FE082280010EDB7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */,
-				52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */,
+				647335182FE081210010EDB7 /* NetworkingService.swift */,
+				6473351A2FE081310010EDB7 /* LocalJSONNetworkingService.swift */,
 			);
-			path = Pods;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		C58A76678FB607DF696B4562 /* Frameworks */ = {
@@ -306,11 +292,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6466ED312FE0791D00FFBCF8 /* Build configuration list for PBXNativeTarget "TransferApp" */;
 			buildPhases = (
-				D9668CB123AFA09F422C826D /* [CP] Check Pods Manifest.lock */,
 				6466ED222FE0791B00FFBCF8 /* Sources */,
 				6466ED232FE0791B00FFBCF8 /* Frameworks */,
 				6466ED242FE0791B00FFBCF8 /* Resources */,
-				BA5C741C1FC0915FBD4867C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,52 +350,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BA5C741C1FC0915FBD4867C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TransferApp/Pods-TransferApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D9668CB123AFA09F422C826D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TransferApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6466ED222FE0791B00FFBCF8 /* Sources */ = {
@@ -582,7 +520,6 @@
 		};
 		6466ED322FE0791D00FFBCF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7161B168CF85D8561797434 /* Pods-TransferApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -625,7 +562,6 @@
 		};
 		6466ED332FE0791D00FFBCF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52388653D2DA488E6FFD110B /* Pods-TransferApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
